@@ -1,0 +1,15 @@
+  <DIV ID="footer">
+         <P>&copy; 2013 frOErider, <b>Thomas Clemens</b> All Rights Reserved. <?php 
+		 include ("config.php");
+		 
+		 if (defined('DEBUG')) {
+			echo  "<br /><b> *** Version: " . $version . " ***  !!! DEBUGING MODE !!! </b><br /> ";
+		 }
+		 else
+		 {
+			echo "<br /><b> *** Version: " . $version . " *** </b><br />";
+		 }
+		 ?></P>
+  </DIV>
+ </BODY>
+</HTML>

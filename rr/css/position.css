@@ -1,0 +1,25 @@
+#header {
+ position: fixed;
+ top: 0; left: 0; right: 0; height: 6em;
+ border-bottom: 0.1em solid #15DA1B;
+}
+/*
+#menu_li {
+ position: fixed;
+ top: 6.2em; left: 1em; bottom: 1.8em; right: 85%;
+ padding: 0 0.5em;
+ border-right: 0.1em solid #15DA1B;
+ overflow: auto;
+}
+*/
+#main {
+ position: fixed;
+ top: 8em; left: 25%; bottom: 1.8em; right: 2%;
+ overflow: auto;
+ padding: 0 0.5em;
+}
+#footer {
+ position: fixed;
+ left: 0; bottom: 0; right: 0; height: 2em;
+ border-top: 0.1em solid #15DA1B;
+}

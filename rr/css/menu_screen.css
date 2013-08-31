@@ -1,0 +1,55 @@
+/*--formatiert die Menüleiste--*/
+#menu { 
+ position: fixed;
+ top: 6.5em; left: 0em; bottom: 1.8em; right: 80%;
+ padding: 0 0.5em;
+ border-right: 0.1em solid #15DA1B;
+ overflow: auto;
+ float: left; 
+/*	
+ width: 100%; 
+ padding: 0 20px; 
+ */
+}
+
+/*--formatiert die Navigationsblöcke--*/ 
+#menu ul { 
+/*float: left; 
+width: 140px; */
+list-style-type: none; 
+}
+/*-- definieren der Links im Menu --*/
+#menu a { 
+text-decoration: none; 
+display: block; 
+border: 1px solid #ccc; 
+text-align: left; 
+
+} 
+
+a:link {color:#0B0B61;}      /* unvisited link */
+a:visited {color:#0B0B61;}  /* visited link */
+a:hover {color:#2B9625;}  /* mouse over link */
+a:active {color:#2B9625;}  /* selected link */
+
+
+/*--lässt die Dropdown-Links beim Hovern erscheinen--*/ 
+/*
+#menu ul li:hover ul { 
+display: none; 
+}
+*/
+
+/* 
+*verhindert im Zusammenhang mit position absolute bei ul ul 
+*eine Höhenvergrößerung von #menu beim Hovern-- 
+*/ 
+#menu li { 
+ /* position: relative;  */
+} 
+
+/*
+#menu ul ul {
+	display: none;
+}
+*/

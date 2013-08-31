@@ -1,0 +1,45 @@
+Lizenzbedingungen
+
+1. Geltungsbereich
+
+1.1 Mit dem Download und/oder der Installation und/oder der Speicherung der cb-talk.de Scripte erklären Sie Ihr Einverständnis mit den vorliegenden Lizenzbestimmungen. Sind Sie mit den vorliegenden Bestimmungen nicht einverstanden, dürfen Sie cb-talk.de Scripte nicht installieren, nicht speichern und nicht downloaden. 
+
+1.2 Ihr Recht zur Nutzung der cb-talk.de Scripte erlischt automatisch, wenn eine der Bedingungen dieser Lizenzbestimmungen verletzt wird. Beim Erlöschen des Nutzungsrechts sind Sie dazu verpflichtet, die cb-talk.de Scripte auf den verwendeten Servern und Datenbanken zu löschen sowie alle Kopien der cb-talk.de Scripte , einschließlich der etwaigen veränderten oder geänderten Versionen der cb-talk.de Scripte , zu vernichten.
+
+2. Lizenzumfang
+
+2.1 Diese Kopie(n) der cb-talk.de Scripte wird Ihnen kostenfrei auf Dauer bis auf Widerruf, der nicht begründet werden muss, zur Nutzung überlassen. Die cb-talk.de Scripte und die dazugehörigen Dokumentationen sind urheberrechtlich geschützt. Mit der Anerkennung dieser Lizenzbedingungen wird Ihnen das Recht eingeräumt, die Software unter den folgenden Nutzungsbedingungen zu verwenden. Eine weitergehende Nutzung oder Verwertung ist ausgeschlossen.
+
+2.2 Vervielfältigungen
+
+2.2.1 Unter der Nutzung ist das dauerhafte oder nur vorübergehende, ganz oder teilweise Herstellen von Vervielfältigungen der cb-talk.de Scripte durch Speichern, Laden, Ablaufen und Anzeigen zum Zwecke der Ausführung auf einem Server und einer angebundenen Datenbank sowie der Verarbeitung der in der Software enthaltenen Daten zu verstehen. 
+
+2.2.2 Sie dürfen beliebig viele Kopien der Software für Ihren Eigengebrauch erstellen. Sie dürfen darüber hinaus diese Kopien der cb-talk.de Scripte als Testversionen auf Ihrem Server installieren, um Änderungen am Quellcode, Templates oder an der Datenbank überprüfen zu können. 
+
+2.2.3 Aus Gründen der Datensicherheit und Sicherstellung der Reaktivierung eines Computersystems nach einem Totalausfall, dürfen Sie durch turnusmäßige Sicherung des gesamten Datenbestands, einschließlich der eingesetzten Computerprogramme (z.B. durch den Einsatz eines Bandlaufwerks), Sicherungskopien in der erforderlichen Anzahl herstellen.
+
+2.3 Veränderungen
+
+2.3.1 Sie dürfen den Quellcode der cb-talk.de Scripte bearbeiten und auf Ihre Bedürfnisse sowohl grafisch als auch funktional anpassen. 
+
+2.3.2 Copyrightvermerke, Seriennummern sowie sonstige der Software- und Quellcodeidentifikation dürfen nicht entfernt werden. 
+
+2.4 Die Copyrights der Schriftarten liegen bei den Eigentümern.
+
+3. Mängelansprüche
+
+3.1 Es wird darauf hingewiesen, dass es nach dem derzeitigen Stand der Technik nicht möglich ist, Fehler in Datenverarbeitungsprogrammen unter allen Anwendungsbedingungen auszuschließen. 
+
+3.2 Die Nutzungsrechte an den Kopien der cb-talk.de Scripte werden Ihnen unentgeltlich bis auf Widerruf eingeräumt. Eine Gewährleistung und Haftung für Mängel an der Software ist ausgeschlossen.
+
+4. Vertragsstrafe
+
+4.1 Bei einer Verletzung dieser Lizenzbedingungen verpflichten Sie sich zur sofortigen Zahlung einer Vertragsstrafe in Höhe von Fünftausend Euro an den Lizenzgeber, Daniel Kauser in Cottbus. Darüber hinausgehende Schadensersatzansprüche bleiben vorbehalten. 
+
+5. Gerichtsstand
+
+5.1 Es gilt das Recht der Bundesrepublik Deutschland. Gerichtsstand ist Berlin.
+
+6. Salvatorische Klausel
+
+6.1 Im Falle der Unwirksamkeit einer Bestimmung der Lizenzvereinbarung sind Sie befugt, die unwirksame Bestimmung durch eine wirksame zu ersetzen, deren wirtschaftlicher Erfolg dem der unwirksamen Bestimmung so weit wie möglich entspricht.

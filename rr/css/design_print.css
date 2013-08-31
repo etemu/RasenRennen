@@ -1,0 +1,34 @@
+BODY {
+ background-color: #FFFFFF;
+ color: #000000;
+ font-family: Arial;
+ font-size: 50%;
+}
+A:link { color: #8B7CFF }
+A:visited { color: #483ACE }
+A:active { color: #CC0000 }
+H1, H2 {
+ font-style: italic;
+ font-size: 100%;
+}
+H1 {
+ margin-top: 0;
+ font-weight: bold;
+}
+
+/* css IDs */
+#header, #main, #footer { 
+	background-color: #FFFFFF; 
+	color: #000000;
+	font-family: Arial;
+	font-size: 120%;
+}
+#header P {
+ text-align: center;
+ margin: 0;
+}
+#footer P {
+ margin: 0;
+ font-size: smaller;
+ text-align: right;
+}

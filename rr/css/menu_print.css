@@ -1,0 +1,80 @@
+/* css Struktur für das linke Menü */
+/* das Aussehen */
+
+/* Menü für Smastagsrernnen */
+/* wir hier mit einer seperaten Webseite und angepassten css gelöst
+ da onclck() Java Script benötigt */
+/*--formatiert die Menüleiste--*/
+#menu { 
+ display: none;
+ position: fixed;
+ top: 6.2em; left: 0em; bottom: 1.8em; right: 80%;
+ padding: 0 0.5em;
+ border-right: 0.1em solid #15DA1B;
+ overflow: auto;
+ float: left; 
+/*	
+ width: 100%; 
+ padding: 0 20px; 
+ */
+}
+
+/*--formatiert die Navigationsblöcke--*/ 
+#menu ul { 
+/*float: left; 
+width: 140px; */
+list-style-type: none; 
+}
+
+#menu a { 
+text-decoration: none; 
+display: block; 
+border: 1px solid #ccc; 
+text-align: left; 
+/* background: #ff9224; */
+color: #003366;
+} 
+
+/*--definiert die "Drop-Down-Links" im Hoverzustand--*/
+/*
+#menu a:hover {  
+color: #ff9224; 
+background: #003366; 
+}
+*/
+
+/*--lässt die Dropdown-Links beim Hovern erscheinen--*/ 
+/*
+#menu ul li:hover ul { 
+display: none; 
+}
+*/
+
+/* 
+*verhindert im Zusammenhang mit position absolute bei ul ul 
+*eine Höhenvergrößerung von #menu beim Hovern-- 
+*/ 
+#menu li { 
+ /* position: relative;  */
+} 
+
+/*
+#menu ul ul {
+	display: none;
+}
+*/
+
+
+
+#menu { 
+ position: fixed;
+ top: 6.2em; left: 0em; bottom: 1.8em; right: 80%;
+ padding: 0 0.5em;
+ border-right: 0.1em solid #15DA1B;
+ overflow: auto;
+ float: left; 
+/*	
+ width: 100%; 
+ padding: 0 20px; 
+ */
+}

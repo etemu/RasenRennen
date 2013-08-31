@@ -1,0 +1,61 @@
+/* alle css selektroen sihe http://www.w3schools.com/css  */
+/* Notepad++ hat css-Erkennung */
+BODY {
+ background-color: #FFFFFF;
+ color: #000000;
+ font-family: Arial;
+}
+
+table, tr, th, td
+{
+	border: none;
+	text-align: center;
+	vertical-align: middle;
+}
+
+td 
+{
+	font-weight:normal;
+	height:20px;
+}
+
+ul, li {
+  list-style:none;
+}
+
+
+H1, H2 {
+ font-style: italic;
+ font-size: 120%;
+}
+H1 {
+ margin-top: 0;
+ font-weight: bold;
+}
+
+H1.warning {color: #FF0000}
+H1.success {color: #2B9625}
+H1.menu_title {color: #2B9625}
+
+/* css IDs */
+#header, #main, #footer { 
+	background-color: #FFFFFF; 
+}
+#header P {
+ text-align: center;
+ margin: 0;
+}
+#footer P {
+ margin: 0;
+ font-size: smaller;
+ text-align: right;
+}
+
+.debug {color: #FF0000}
+
+input.anmeldung {
+    width:200px;
+    padding:2px;
+    border:1px solid #aaa;
+	margin:10; 
+}

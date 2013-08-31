@@ -1,0 +1,50 @@
+/* Menü für Smastagsrernnen */
+/* wir hier mit einer seperaten Webseite und angepassten css gelöst
+ da onclck() Java Script benötigt */
+/*--formatiert die Menüleiste--*/
+#menu { 
+ /* hier für den Druckmodus das gesamte Menü ausblenden */
+ display:none;
+/*	
+ width: 100%; 
+ padding: 0 20px; 
+ */
+}
+
+#menu H1 { 
+ display:none;
+}
+
+
+/*--formatiert die Navigationsblöcke--*/ 
+#menu ul { 
+ display:none;
+}
+
+#menu a { 
+ display:none;
+} 
+
+/* 
+*verhindert im Zusammenhang mit position absolute bei ul ul 
+*eine Höhenvergrößerung von #menu beim Hovern-- 
+*/ 
+#menu li { 
+ /* position: relative;  */
+  /* hier für den Druckmodus das gesamte Menü ausblenden */
+ display:none;
+} 
+
+#menu ul li {
+	display: none;
+}
+
+#menu ul ul {
+	display: none;
+}
+
+
+#menu { 
+  /* hier für den Druckmodus das gesamte Menü ausblenden */
+ display:none;
+}

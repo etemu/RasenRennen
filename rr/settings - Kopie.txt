@@ -1,0 +1,8 @@
+nbr_last_results 
+5
+nbr_race_results 
+10
+auto_refresh_cycl 
+10
+battle_id 
+5

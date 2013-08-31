@@ -1,0 +1,13 @@
+nbr_last_results 
+5
+nbr_race_results 
+10
+auto_refresh_cycl 
+20
+battle_id 
+5
+strt_time_seeding
+13:00
+strt_time_finale
+11:00
+
