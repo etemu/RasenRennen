@@ -1,6 +1,6 @@
 <?php
-/* Verfasser: Thomas Clemens
- * Letzte Änderung: 29.07.2013
+/* Verfasser: Thomas Clemens, Alex Shure
+ * Letzte Änderung: 02.09.2013
  */
 // MUSS als erstes stehen 
 session_start ();   

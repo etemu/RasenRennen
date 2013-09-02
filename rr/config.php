@@ -1,6 +1,6 @@
 <?php
-/* Verfasser: Thomas Clemens
- * Letzte Änderung: 29.07.2013
+/* Verfasser: Thomas Clemens, Alex Shure
+ * Letzte Änderung: 02.09.2013
  */
 
 // database settings
@@ -47,7 +47,7 @@ $strt_time_finale = $array[11];
 
 // fclose($dateihandle);
 
-$version= 'V1.6.8';
+$version= 'V1.6.9';
 
 // auskommentieren um den Debugmodus auszuschalten 
 //define ('DEBUG', 1);
