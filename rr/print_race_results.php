@@ -61,29 +61,29 @@ if($_GET['race'] != NIX)
 	$bis = $_GET['bis'];
 	if ($_GET['sort'] == StrtNr)
 	{
-		$sql = "SELECT rennen_1.idRennen, rennen_1.StartNr, teilnehmer.Name, teilnehmer.Vorname, teilnehmer.KAT, rennen_1.LaufZeit
-		FROM rennen_1, teilnehmer
-		WHERE rennen_1.StartNr = teilnehmer.StartNr
-		AND rennen_1.idRennen = {$raceID}
-		ORDER BY rennen_1.StartNr ASC LIMIT {$von} , {$bis}";
+		$sql = "SELECT race_results.raceID, race_results.userID, teilnehmer.Name, teilnehmer.Vorname, teilnehmer.KAT, race_results.runtime
+		FROM race_results, teilnehmer
+		WHERE race_results.userID = teilnehmer.userID
+		AND race_results.raceID = {$raceID}
+		ORDER BY race_results.userID ASC LIMIT {$von} , {$bis}";
 	}
 
 	if ($_GET['sort'] == Name)
 	{
-		$sql = "SELECT rennen_1.idRennen, rennen_1.StartNr, teilnehmer.Name, teilnehmer.Vorname, teilnehmer.KAT, rennen_1.LaufZeit
-		FROM rennen_1, teilnehmer
-		WHERE rennen_1.StartNr = teilnehmer.StartNr
-		AND rennen_1.idRennen = {$raceID}
+		$sql = "SELECT race_results.raceID, race_results.userID, teilnehmer.Name, teilnehmer.Vorname, teilnehmer.KAT, race_results.runtime
+		FROM race_results, teilnehmer
+		WHERE race_results.userID = teilnehmer.userID
+		AND race_results.raceID = {$raceID}
 		ORDER BY teilnehmer.Name ASC LIMIT {$von} , {$bis}";
 	}
 
-	if ($_GET['sort'] == Laufzeit)
+	if ($_GET['sort'] == runtime)
 	{
-		$sql = "SELECT rennen_1.idRennen, rennen_1.StartNr, teilnehmer.Name, teilnehmer.Vorname, teilnehmer.KAT, rennen_1.LaufZeit
-		FROM rennen_1, teilnehmer
-		WHERE rennen_1.StartNr = teilnehmer.StartNr
-		AND rennen_1.idRennen = {$raceID}
-		ORDER BY rennen_1.LaufZeit ASC LIMIT {$von} , {$bis}";
+		$sql = "SELECT race_results.raceID, race_results.userID, teilnehmer.Name, teilnehmer.Vorname, teilnehmer.KAT, race_results.runtime
+		FROM race_results, teilnehmer
+		WHERE race_results.userID = teilnehmer.userID
+		AND race_results.raceID = {$raceID}
+		ORDER BY race_results.runtime ASC LIMIT {$von} , {$bis}";
 	}
 
 	$result = $db->query($sql);

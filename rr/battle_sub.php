@@ -67,13 +67,13 @@ echo "<DIV ID='main'>";
 				tn.Name,
 				tn.Vorname,
 				tn.KAT,
-				r1.Laufzeit, 
-				r1.idRennen AS RennID
+				r1.runtime, 
+				r1.raceID AS RennID
 			FROM battles btl
-			JOIN teilnehmer  tn ON tn.StartNr = btl.StrtNr
-			JOIN rennen_1    r1 ON r1.StartNr = btl.StrtNr
-			WHERE r1.idRennen = 4 AND btl.BattleID = {$battleID}
-			ORDER BY r1.Laufzeit ASC LIMIT 0 , {$my_teilnehmerzahl}";
+			JOIN teilnehmer  tn ON tn.userID = btl.StrtNr
+			JOIN race_results    r1 ON r1.userID = btl.StrtNr
+			WHERE r1.raceID = 4 AND btl.BattleID = {$battleID}
+			ORDER BY r1.runtime ASC LIMIT 0 , {$my_teilnehmerzahl}";
 	// DB Zugriff
 	$result1 = $db->query($sql);
 	if (!$result1)
@@ -101,12 +101,12 @@ echo "<DIV ID='main'>";
 			  <th> <? echo $php_var ?> </th>
 			  -->
 			  <th>Battle</th>
-			  <th>StartNr</th>
+			  <th>userID</th>
 			  <th>Name</th>
 			  <th>Vorname</th>
 			  <th>KAT</th>
 			  <th>x</th>
-			  <th>StartNr</th>
+			  <th>userID</th>
 			  <th>Name</th>
 			  <th>Vorname</th>
 			  <th>KAT</th>

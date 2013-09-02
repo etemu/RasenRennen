@@ -44,7 +44,7 @@ if (DEBUG) echo " alter Rennindex ist:" . $zeile['db_index_old'] .  "<br \>";
 
 $db_index_old = $zeile['db_index_old'];
 
-// die Laufzeiten in dei Datenbank eintragen 
+// die runtimeen in dei Datenbank eintragen 
 if (DEBUG) echo "<br \> Inhalt des csv-Files in Datenbank eintragen <br \>";
 // file open and read
 // initialisiert den File-Pointer 
@@ -58,14 +58,14 @@ while (($data = fgetcsv($handle, 100, ";")) !== FALSE)
         if ($db_index > $db_index_old)
 	{
 		$RennID = $data[0];
-		$StartNr = $data[1];
-		$LaufZeit = $data[2];
+		$userID = $data[1];
+		$runtime = $data[2];
         if (DEBUG) echo " DB-Befehl ausführen... <br \>";
-		$sql = "INSERT INTO rennen_1(idRennen, StartNr, Laufzeit)
+		$sql = "INSERT INTO race_results(raceID, userID, runtime)
 		VALUES
 		('$RennID', 
-		 '$StartNr',
-		 '$LaufZeit'
+		 '$userID',
+		 '$runtime'
 		 )";
 
 		 $result = $db->query($sql);
@@ -100,7 +100,7 @@ if (!$result) {
 if (DEBUG) 
 {
     // die Tabelleninahlt ausgeben 
-    $sql = "SELECT * FROM rennen_1";
+    $sql = "SELECT * FROM race_results";
 
     $result = $db->query($sql);
     if (!$result) 
@@ -113,10 +113,10 @@ if (DEBUG)
     {
       echo "<tr>";
       echo "<td>". $zeile['Lauf_ID'] . "</td>";
-      echo "<td>". $zeile['idRennen'] . "</td>";
-      echo "<td>". $zeile['StartNr'] . "</td>";
+      echo "<td>". $zeile['raceID'] . "</td>";
+      echo "<td>". $zeile['userID'] . "</td>";
       // Zeitausgabe in Millisekunden
-      echo "<td>". $zeile['Laufzeit'] * 100 . "ms</td>";
+      echo "<td>". $zeile['runtime'] * 100 . "ms</td>";
       echo "</tr>";
     }
     echo "</table>";    

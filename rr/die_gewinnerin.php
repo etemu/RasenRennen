@@ -33,10 +33,10 @@ $sql = "SELECT btl.StrtNr,
 			tn.Name,
 			tn.Vorname,
 			tn.KAT,
-			r1.Laufzeit 
+			r1.runtime 
 		FROM battles btl
-		JOIN teilnehmer tn ON tn.StartNr = btl.StrtNr
-		JOIN rennen_1 r1 ON r1.StartNr = btl.StrtNr
+		JOIN teilnehmer tn ON tn.userID = btl.StrtNr
+		JOIN race_results r1 ON r1.userID = btl.StrtNr
 		WHERE btl.battleID = 690";
 
 // DB Zugriff

@@ -58,16 +58,16 @@ include ("menu.php");
 		echo "Aktualisierung automatisch alle " . $auto_refresh_cycle . " sek / letzte Aktualisierung: " . $datum .  "<br>";
 	}		
 	
-	// Hier für das 16tel Finale (erstes Battle) die Laufzeiten des Finallaufs verwenden 
+	// Hier für das 16tel Finale (erstes Battle) die runtimeen des Finallaufs verwenden 
 	// Der Finallauf hat die RennID 4
 	// Die besten Zeiten in aufsteigender Reihenfolge
-	$sql = "SELECT rennen_1.StartNr, teilnehmer.Name, teilnehmer.Vorname, teilnehmer.KAT
-	FROM rennen_1, teilnehmer
-	WHERE rennen_1.StartNr = teilnehmer.StartNr
-	AND rennen_1.idRennen = 4
+	$sql = "SELECT race_results.userID, teilnehmer.Name, teilnehmer.Vorname, teilnehmer.KAT
+	FROM race_results, teilnehmer
+	WHERE race_results.userID = teilnehmer.userID
+	AND race_results.raceID = 4
 	AND teilnehmer.KAT != 'U11'
 	AND teilnehmer.KAT != 'Men'
-	ORDER BY rennen_1.LaufZeit ASC LIMIT 0 , {$my_teilnehmerzahl}";
+	ORDER BY race_results.runtime ASC LIMIT 0 , {$my_teilnehmerzahl}";
 	// DB Zugriff
 	$result1 = $db->query($sql);
 	if (!$result1)
@@ -95,12 +95,12 @@ include ("menu.php");
 			  <th> <? echo $php_var ?> </th>
 			  -->
 			  <th>Battle</th>
-			  <th>StartNr</th>
+			  <th>userID</th>
 			  <th>Name</th>
 			  <th>Vorname</th>
 			  <th>KAT</th>
 			  <th>x</th>
-			  <th>StartNr</th>
+			  <th>userID</th>
 			  <th>Name</th>
 			  <th>Vorname</th>
 			  <th>KAT</th>
@@ -138,7 +138,7 @@ include ("menu.php");
 		$result1->data_seek($anzahl-1-$i);   
 		// fetch row
 		$row1 = $result1->fetch_row();
-		// StartNr
+		// userID
 		echo $row1[0];
 		echo "</td>";
 		// Name

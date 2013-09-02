@@ -40,13 +40,13 @@ else
 $db->query('SET NAMES utf8');
 
 echo '<br \><b>U17 Qualiläufe:</b>';
-// hole alle Ergebnisse aus der DB anahnd des Laufzeit
-$sql = "SELECT rennen_1.idRennen, rennen_1.StartNr, teilnehmer.Name, teilnehmer.Vorname, teilnehmer.KAT, rennen_1.LaufZeit
-FROM rennen_1, teilnehmer
-WHERE rennen_1.StartNr = teilnehmer.StartNr
-AND rennen_1.idRennen = 3
+// hole alle Ergebnisse aus der DB anahnd des runtime
+$sql = "SELECT race_results.raceID, race_results.userID, teilnehmer.Name, teilnehmer.Vorname, teilnehmer.KAT, race_results.runtime
+FROM race_results, teilnehmer
+WHERE race_results.userID = teilnehmer.userID
+AND race_results.raceID = 3
 AND teilnehmer.KAT = 'U17'
-ORDER BY rennen_1.Laufzeit ASC";
+ORDER BY race_results.runtime ASC";
 
 $result = $db->query($sql);
 if (!$result)

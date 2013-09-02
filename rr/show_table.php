@@ -24,14 +24,14 @@ function show_table_results ($result, $offset, $pos)
 			{
 				echo "<th>Platz</th>";
 			}
-			echo "<th>StartNr</th>
+			echo "<th>userID</th>
 			  <th>Name</th>
 			  <th>Vorname</th>
 			  <th>KAT</th>";
 			  if (defined('DEBUG')) {
-				echo "<th>Laufzeit [ms]</th>";
+				echo "<th>runtime [ms]</th>";
 			  }
-			echo "<th>Laufzeit</th>
+			echo "<th>runtime</th>
 			</tr>  ";
 	$lfdNr = 0;
 	$Platz = 0;
@@ -39,34 +39,34 @@ function show_table_results ($result, $offset, $pos)
 	while ($zeile = $result->fetch_array())
 	{
 		$Platz++;
-		// Laufzeit in ms berechnen
-		//$LaufZeit = $zeile['LaufZeit'] * 100;
+		// runtime in ms berechnen
+		//$runtime = $zeile['runtime'] * 100;
 		// 25.6.13 TC: change runtime datatype in DB from float to BIGINT
 		// value in db table as ms 
-		$LaufZeit = $zeile['LaufZeit'];
+		$runtime = $zeile['runtime'];
 		echo '<tr align="center" valign="middle">';
 		if (defined('DEBUG')) {
-			echo "<td style='width:3%'>". $zeile['idRennen'] . "</td>";	
+			echo "<td style='width:3%'>". $zeile['raceID'] . "</td>";	
 		}
 		if ($pos)
 		{
 			echo "<td style='width:3%'>". $Platz . "</td>";
 		}
-		echo "<td style='width:3%'>". $zeile['StartNr'] . "</td>";
+		echo "<td style='width:3%'>". $zeile['userID'] . "</td>";
 		echo "<td style='width:8%'>". $zeile['Name'] . "</td>";
 		echo "<td style='width:8%'>". $zeile['Vorname'] . "</td>";
 		echo "<td style='width:3%'>". $zeile['KAT'] . "</td>";
 		if (defined('DEBUG')) {
-					echo "<td style='width:5%'>". $LaufZeit . "</td>";
+					echo "<td style='width:5%'>". $runtime . "</td>";
 		};
 		// Liefert die nächste ganze Zahl, die kleiner oder gleich dem Parameter ist
 		/*
-		echo "<td style='width:3%'>" . floor($LaufZeit /1000/60) . "</td>";
-		echo "<td style='width:3%'>". floor(($LaufZeit %60000)/1000)  . "</td>";
-		echo "<td style='width:4%'>". $LaufZeit % 1000 . "</td>";
+		echo "<td style='width:3%'>" . floor($runtime /1000/60) . "</td>";
+		echo "<td style='width:3%'>". floor(($runtime %60000)/1000)  . "</td>";
+		echo "<td style='width:4%'>". $runtime % 1000 . "</td>";
 		*/
 		$format = '%d:%02d:%03d';
-		echo "<td style='width:3%'>" . sprintf($format, floor($LaufZeit /1000/60), floor(($LaufZeit %60000)/1000),$LaufZeit % 1000) . "</td>";
+		echo "<td style='width:3%'>" . sprintf($format, floor($runtime /1000/60), floor(($runtime %60000)/1000),$runtime % 1000) . "</td>";
 		echo "</tr>";
 	}
 	echo "</table>";
@@ -89,14 +89,14 @@ function show_table_best_results ($result, $offset)
 				echo "<th>Renn ID</th>";
 			  }
 			echo "<th>Platz</th>
-			  <th>StartNr</th>
+			  <th>userID</th>
 			  <th>Name</th>
 			  <th>Vorname</th>
 			  <th>KAT</th>";
 			  if (defined('DEBUG')) {
-				echo "<th>Laufzeit [ms]</th>";
+				echo "<th>runtime [ms]</th>";
 			  }
-			echo "<th>Laufzeit</th>
+			echo "<th>runtime</th>
 			</tr>  ";
 	$lfdNr = 0;
 
@@ -105,31 +105,31 @@ function show_table_best_results ($result, $offset)
 	while ($zeile = $result->fetch_array())
 	{
 		$Platz++;
-		// Laufzeit in ms berechnen
-		//$LaufZeit = $zeile['LaufZeit'] * 100;
+		// runtime in ms berechnen
+		//$runtime = $zeile['runtime'] * 100;
 		// 25.6.13 TC: change runtime datatype in DB from float to BIGINT
 		// value in db table as ms 
-		$LaufZeit = $zeile['LaufZeit'];
+		$runtime = $zeile['runtime'];
 		echo '<tr align="center" valign="middle">';
 		if (defined('DEBUG')) {
-			echo "<td style='width:3%'>". $zeile['idRennen'] . "</td>";	
+			echo "<td style='width:3%'>". $zeile['raceID'] . "</td>";	
 		}
 		echo "<td style='width:3%'>". $Platz . "</td>";
-		echo "<td style='width:3%'>". $zeile['StartNr'] . "</td>";
+		echo "<td style='width:3%'>". $zeile['userID'] . "</td>";
 		echo "<td style='width:8%'>". $zeile['Name'] . "</td>";
 		echo "<td style='width:8%'>". $zeile['Vorname'] . "</td>";
 		echo "<td style='width:3%'>". $zeile['KAT'] . "</td>";
 		if (defined('DEBUG')) {
-					echo "<td style='width:5%'>". $LaufZeit . "</td>";
+					echo "<td style='width:5%'>". $runtime . "</td>";
 		};
 		// Liefert die nächste ganze Zahl, die kleiner oder gleich dem Parameter ist
 		/*
-		echo "<td style='width:3%'>" . floor($LaufZeit /1000/60) . "</td>";
-		echo "<td style='width:3%'>". floor(($LaufZeit %60000)/1000)  . "</td>";
-		echo "<td style='width:4%'>". $LaufZeit % 1000 . "</td>";
+		echo "<td style='width:3%'>" . floor($runtime /1000/60) . "</td>";
+		echo "<td style='width:3%'>". floor(($runtime %60000)/1000)  . "</td>";
+		echo "<td style='width:4%'>". $runtime % 1000 . "</td>";
 		*/
 		$format = '%d:%02d:%03d';
-		echo "<td style='width:3%'>" . sprintf($format, floor($LaufZeit /1000/60), floor(($LaufZeit %60000)/1000),$LaufZeit % 1000) . "</td>";
+		echo "<td style='width:3%'>" . sprintf($format, floor($runtime /1000/60), floor(($runtime %60000)/1000),$runtime % 1000) . "</td>";
 		echo "</tr>";
 	}
 	echo "</table>";
@@ -150,14 +150,14 @@ function show_table_last_results ($result)
 			  if (defined('DEBUG')) {
 				echo "<th>Renn ID</th>";
 			  }
-			  echo "<th>StartNr</th>
+			  echo "<th>userID</th>
 			  <th>Name</th>
 			  <th>Vorname</th>
 			  <th>KAT</th>";
 			  if (defined('DEBUG')) {
-				echo "<th>Laufzeit [ms]</th>";
+				echo "<th>runtime [ms]</th>";
 			  }
-			echo "<th>Laufzeit</th>
+			echo "<th>runtime</th>
 			</tr>  ";
 	$lfdNr = 0;
 	$Platz = 0;
@@ -165,30 +165,30 @@ function show_table_last_results ($result)
 	while ($zeile = $result->fetch_array())
 	{
 		$Platz++;
-		// Laufzeit in ms berechnen
-		//$LaufZeit = $zeile['LaufZeit'] * 100;
+		// runtime in ms berechnen
+		//$runtime = $zeile['runtime'] * 100;
 		// 25.6.13 TC: change runtime datatype in DB from float to BIGINT
 		// value in db table as ms 
-		$LaufZeit = $zeile['LaufZeit'];
+		$runtime = $zeile['runtime'];
 		echo '<tr align="center" valign="middle">';
 		if (defined('DEBUG')) {
-			echo "<td style='width:3%'>". $zeile['idRennen'] . "</td>";	
+			echo "<td style='width:3%'>". $zeile['raceID'] . "</td>";	
 		}
-		echo "<td style='width:3%'>". $zeile['StartNr'] . "</td>";
+		echo "<td style='width:3%'>". $zeile['userID'] . "</td>";
 		echo "<td style='width:8%'>". $zeile['Name'] . "</td>";
 		echo "<td style='width:8%'>". $zeile['Vorname'] . "</td>";
 		echo "<td style='width:3%'>". $zeile['KAT'] . "</td>";
 		if (defined('DEBUG')) {
-					echo "<td style='width:5%'>". $LaufZeit . "</td>";
+					echo "<td style='width:5%'>". $runtime . "</td>";
 		};
 		// Liefert die nächste ganze Zahl, die kleiner oder gleich dem Parameter ist
 		/*
-		echo "<td style='width:3%'>" . floor($LaufZeit /1000/60) . "</td>";
-		echo "<td style='width:3%'>". floor(($LaufZeit %60000)/1000)  . "</td>";
-		echo "<td style='width:4%'>". $LaufZeit % 1000 . "</td>";
+		echo "<td style='width:3%'>" . floor($runtime /1000/60) . "</td>";
+		echo "<td style='width:3%'>". floor(($runtime %60000)/1000)  . "</td>";
+		echo "<td style='width:4%'>". $runtime % 1000 . "</td>";
 		*/
 		$format = '%d:%02d:%03d';
-		echo "<td style='width:3%'>" . sprintf($format, floor($LaufZeit /1000/60), floor(($LaufZeit %60000)/1000),$LaufZeit % 1000) . "</td>";
+		echo "<td style='width:3%'>" . sprintf($format, floor($runtime /1000/60), floor(($runtime %60000)/1000),$runtime % 1000) . "</td>";
 		echo "</tr>";
 	}
 	echo "</table>";
@@ -207,7 +207,7 @@ function show_table_on_track ($result)
 		// den Tabellenkopf einmal erstellen
 		  echo "<tr>
 			  <th>Renn-ID</th>
-			  <th>StartNr</th>
+			  <th>userID</th>
 			  <th>Name</th>
 			  <th>Vorname</th>
 			  <th>KAT</th>
@@ -218,8 +218,8 @@ function show_table_on_track ($result)
 	while ($zeile = $result->fetch_array())
 	{
 		echo '<tr align="center" valign="middle">';
-		echo "<td style='width:3%; height:20px'>". $zeile['idRennen'] . "</td>";
-		echo "<td style='width:3%; height:20px'>". $zeile['StartNr'] . "</td>";
+		echo "<td style='width:3%; height:20px'>". $zeile['raceID'] . "</td>";
+		echo "<td style='width:3%; height:20px'>". $zeile['userID'] . "</td>";
 		echo "<td style='width:8%; height:20px'>". $zeile['Name'] . "</td>";
 		echo "<td style='width:8%; height:20px'>". $zeile['Vorname'] . "</td>";
 		echo "<td style='width:3%; height:20px'>". $zeile['KAT'] . "</td>";
@@ -239,7 +239,7 @@ function show_table_participants ($result)
 	echo '<table border="1" rules="all">';
 		// den Tabellenkopf einmal erstellen
 		  echo "<tr>
-			  <th>StartNr</th>
+			  <th>userID</th>
 			  <th>Name</th>
 			  <th>Vorname</th>
 			  <th>KAT</th>
@@ -247,18 +247,18 @@ function show_table_participants ($result)
 			</tr>  ";
 	$lfdNr = 0;
 	$Platz = 0;
-	//$LaufZeit = 0;
+	//$runtime = 0;
 	// die Ergebnistabelle enthält 10 Ergebinsse als Ergebnis der obigen SQL-Abfrage
 	while ($zeile = $result->fetch_array())
 	{
 		$Platz++;
-		// Laufzeit in ms berechnen
-		//$LaufZeit = $zeile['LaufZeit'] * 100;
+		// runtime in ms berechnen
+		//$runtime = $zeile['runtime'] * 100;
 		// 25.6.13 TC: change runtime datatype in DB from float to BIGINT
 		// value in db table as ms 
-		//$LaufZeit = $zeile['LaufZeit'];
+		//$runtime = $zeile['runtime'];
 		echo '<tr align="center" valign="middle">';
-		echo "<td style='width:3%'>". $zeile['StartNr'] . "</td>";
+		echo "<td style='width:3%'>". $zeile['userID'] . "</td>";
 		echo "<td style='width:5%'>". $zeile['Name'] . "</td>";
 		echo "<td style='width:5%'>". $zeile['Vorname'] . "</td>";
 		echo "<td style='width:3%'>". $zeile['KAT'] . "</td>";

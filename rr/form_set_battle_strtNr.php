@@ -176,13 +176,13 @@ function check_strtNr ($db, $StrtNr, $battleID)
 	// sondern wird aus der Rennen Tabelle mit der ID 4 zusammengesetzt 
 	if ($battleID == 5)
 	{
-		$sql = "SELECT rennen_1.StartNr, teilnehmer.Name, teilnehmer.Vorname, teilnehmer.KAT
-			FROM rennen_1, teilnehmer
-			WHERE rennen_1.StartNr = teilnehmer.StartNr
-			AND rennen_1.idRennen = 4
+		$sql = "SELECT race_results.userID, teilnehmer.Name, teilnehmer.Vorname, teilnehmer.KAT
+			FROM race_results, teilnehmer
+			WHERE race_results.userID = teilnehmer.userID
+			AND race_results.raceID = 4
 			AND teilnehmer.KAT != 'U11'
 			AND teilnehmer.KAT != 'Women'
-			ORDER BY rennen_1.LaufZeit ASC LIMIT 0 , 32";
+			ORDER BY race_results.runtime ASC LIMIT 0 , 32";
 		$result = $db->query($sql);
 		if (!$result)
 		{
@@ -193,7 +193,7 @@ function check_strtNr ($db, $StrtNr, $battleID)
 		$ret = FALSE;
 		while ($zeile = $result->fetch_array())
 		{
-			if ($StrtNr == $zeile['StartNr'])
+			if ($StrtNr == $zeile['userID'])
 			{
 				$ret = TRUE;
 			}
@@ -206,13 +206,13 @@ function check_strtNr ($db, $StrtNr, $battleID)
 	// sondern wird aus der Rennen Tabelle mit der ID 4 zusammengesetzt 
 	else if ($battleID == 693)
 	{
-		$sql = "SELECT rennen_1.StartNr, teilnehmer.Name, teilnehmer.Vorname, teilnehmer.KAT
-			FROM rennen_1, teilnehmer
-			WHERE rennen_1.StartNr = teilnehmer.StartNr
-			AND rennen_1.idRennen = 4
+		$sql = "SELECT race_results.userID, teilnehmer.Name, teilnehmer.Vorname, teilnehmer.KAT
+			FROM race_results, teilnehmer
+			WHERE race_results.userID = teilnehmer.userID
+			AND race_results.raceID = 4
 			AND teilnehmer.KAT != 'U11'
 			AND teilnehmer.KAT != 'Men'
-			ORDER BY rennen_1.LaufZeit ASC LIMIT 0 , 8";
+			ORDER BY race_results.runtime ASC LIMIT 0 , 8";
 		$result = $db->query($sql);
 		if (!$result)
 		{
@@ -223,7 +223,7 @@ function check_strtNr ($db, $StrtNr, $battleID)
 		$ret = FALSE;
 		while ($zeile = $result->fetch_array())
 		{
-			if ($StrtNr == $zeile['StartNr'])
+			if ($StrtNr == $zeile['userID'])
 			{
 				$ret = TRUE;
 			}

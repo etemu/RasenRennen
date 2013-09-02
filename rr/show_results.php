@@ -34,12 +34,12 @@ function show_race_results ($race_ID, $cnt)
 	// charset einstellen 31.5.2013 CLM  (Muss sonst keine Umlaute)
 	$db->query('SET NAMES utf8');
 	
-	// hole die letzten x Ergebnisse aus der DB anahnd des Laufzeit
-	$sql = "SELECT rennen_1.idRennen, rennen_1.StartNr, teilnehmer.Name, teilnehmer.Vorname, teilnehmer.KAT, rennen_1.LaufZeit
-	FROM rennen_1, teilnehmer
-	WHERE rennen_1.StartNr = teilnehmer.StartNr
-	AND rennen_1.idRennen = $race_ID
-	ORDER BY rennen_1.Laufzeit ASC LIMIT 0 , {$cnt}";
+	// hole die letzten x Ergebnisse aus der DB anahnd des runtime
+	$sql = "SELECT race_results.raceID, race_results.userID, teilnehmer.Name, teilnehmer.Vorname, teilnehmer.KAT, race_results.runtime
+	FROM race_results, teilnehmer
+	WHERE race_results.userID = teilnehmer.userID
+	AND race_results.raceID = $race_ID
+	ORDER BY race_results.runtime ASC LIMIT 0 , {$cnt}";
 	
 	$result = $db->query($sql);
 	if (!$result)
@@ -84,11 +84,11 @@ function show_last_results ($race_ID)
 	// hier die entsprechenden SQL-Befehle anhend des abgesendeten Formulars generieren
 	// 31.5.2013 Thomas Clemens
 	// hole die letzten 5 Ergebnisse aus der DB anahnd des Primary Key (autoinkrement)
-	$sql = "SELECT rennen_1.idRennen, rennen_1.StartNr, teilnehmer.Name, teilnehmer.Vorname, teilnehmer.KAT, rennen_1.LaufZeit
-	FROM rennen_1, teilnehmer
-	WHERE rennen_1.StartNr = teilnehmer.StartNr
-	AND rennen_1.idRennen = $race_ID
-	ORDER BY rennen_1.Lauf_ID DESC LIMIT 0 , {$nbr_last_results}";
+	$sql = "SELECT race_results.raceID, race_results.userID, teilnehmer.Name, teilnehmer.Vorname, teilnehmer.KAT, race_results.runtime
+	FROM race_results, teilnehmer
+	WHERE race_results.userID = teilnehmer.userID
+	AND race_results.raceID = $race_ID
+	ORDER BY race_results.Lauf_ID DESC LIMIT 0 , {$nbr_last_results}";
 
 	$result = $db->query($sql);
 	if (!$result)
@@ -136,19 +136,19 @@ function show_onTrack ($race_ID)
 	echo '<br \><b>Aktuell auf der Strecke: </b>';
 	// hole die aktuellen Fahrer anhand des bool-Wertes "Ontrack" aus der DB auslesen 
 	/*
-	$sql = "SELECT rennen_1.idRennen, rennen_1.StartNr, teilnehmer.Name, teilnehmer.Vorname, teilnehmer.KAT, rennen_1.LaufZeit
-	FROM rennen_1, teilnehmer
-	WHERE rennen_1.StartNr = teilnehmer.StartNr
-	AND rennen_1.idRennen = $race_ID AND rennen_1.onTrack = 'true'";
+	$sql = "SELECT race_results.raceID, race_results.userID, teilnehmer.Name, teilnehmer.Vorname, teilnehmer.KAT, race_results.runtime
+	FROM race_results, teilnehmer
+	WHERE race_results.userID = teilnehmer.userID
+	AND race_results.raceID = $race_ID AND race_results.onTrack = 'true'";
 	*/
-	// ORDER BY rennen_1.Lauf_ID DESC LIMIT 0 , {$nbr_last_results}";
+	// ORDER BY race_results.Lauf_ID DESC LIMIT 0 , {$nbr_last_results}";
 	
 	// echo '<br \>'.$race_ID.'<br \>';
-	$sql = "SELECT rennen_1.idRennen, rennen_1.StartNr, teilnehmer.Name, teilnehmer.Vorname, teilnehmer.KAT
-	        FROM rennen_1 INNER JOIN teilnehmer
-				USING (StartNr)
-			WHERE rennen_1.idRennen = $race_ID
-				  AND rennen_1.onTrack = 1";
+	$sql = "SELECT race_results.raceID, race_results.userID, teilnehmer.Name, teilnehmer.Vorname, teilnehmer.KAT
+	        FROM race_results INNER JOIN teilnehmer
+				USING (userID)
+			WHERE race_results.raceID = $race_ID
+				  AND race_results.onTrack = 1";
 
 	$result = $db->query($sql);
 	if (!$result)

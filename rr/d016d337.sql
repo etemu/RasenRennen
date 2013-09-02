@@ -39,25 +39,25 @@ CREATE TABLE IF NOT EXISTS `battles` (
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `rennen_1`
+-- Tabellenstruktur für Tabelle `race_results`
 --
 
-CREATE TABLE IF NOT EXISTS `rennen_1` (
+CREATE TABLE IF NOT EXISTS `race_results` (
   `Lauf_ID` int(3) NOT NULL AUTO_INCREMENT,
-  `idRennen` int(3) NOT NULL,
-  `StartNr` int(3) NOT NULL,
-  `Laufzeit` bigint(20) DEFAULT NULL,
+  `raceID` int(3) NOT NULL,
+  `userID` int(3) NOT NULL,
+  `runtime` bigint(20) DEFAULT NULL,
   `onTrack` tinyint(1) DEFAULT NULL,
   `Dummy2` int(3) DEFAULT NULL,
-  PRIMARY KEY (`idRennen`,`StartNr`,`Lauf_ID`),
+  PRIMARY KEY (`raceID`,`userID`,`Lauf_ID`),
   UNIQUE KEY `Lauf_ID` (`Lauf_ID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=102 ;
 
 --
--- Daten für Tabelle `rennen_1`
+-- Daten für Tabelle `race_results`
 --
 
-INSERT INTO `rennen_1` (`Lauf_ID`, `idRennen`, `StartNr`, `Laufzeit`, `onTrack`, `Dummy2`) VALUES
+INSERT INTO `race_results` (`Lauf_ID`, `raceID`, `userID`, `runtime`, `onTrack`, `Dummy2`) VALUES
 (52, 3, 1, 199402, 0, 0),
 (53, 3, 2, 122669, 0, 0),
 (54, 3, 3, 173496, 0, 0),
@@ -166,7 +166,7 @@ INSERT INTO `rennen_1` (`Lauf_ID`, `idRennen`, `StartNr`, `Laufzeit`, `onTrack`,
 --
 
 CREATE TABLE IF NOT EXISTS `teilnehmer` (
-  `StartNr` int(1) NOT NULL,
+  `userID` int(1) NOT NULL,
   `Name` varchar(20) NOT NULL,
   `Vorname` varchar(20) NOT NULL,
   `Geburtsdatum` date NOT NULL,
@@ -174,14 +174,14 @@ CREATE TABLE IF NOT EXISTS `teilnehmer` (
   `Team` varchar(20) NOT NULL,
   `Ort` varchar(20) NOT NULL,
   `KAT` varchar(10) NOT NULL,
-  PRIMARY KEY (`StartNr`)
+  PRIMARY KEY (`userID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `teilnehmer`
 --
 
-INSERT INTO `teilnehmer` (`StartNr`, `Name`, `Vorname`, `Geburtsdatum`, `Geschlecht`, `Team`, `Ort`, `KAT`) VALUES
+INSERT INTO `teilnehmer` (`userID`, `Name`, `Vorname`, `Geburtsdatum`, `Geschlecht`, `Team`, `Ort`, `KAT`) VALUES
 (1, 'N1', 'V1', '0000-00-00', '', 'frOErider', '', 'Men'),
 (2, 'N2', 'V2', '0000-00-00', '', 'frOErider', '', 'Men'),
 (3, 'N3', 'V3', '0000-00-00', '', 'frOErider', '', 'U17'),

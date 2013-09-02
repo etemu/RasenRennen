@@ -35,7 +35,7 @@ echo "<br \> Inhalt des csv-Files in Datenbank eintragen <br \>";
 
 while (($data = fgetcsv($handle, 500, ";")) !== FALSE)
 {
-                $StartNr = $data[0];
+                $userID = $data[0];
                 $Name = $data[1];
                 $Vorname = $data[2];
                 $Geburtsdatum = $data[3];
@@ -44,9 +44,9 @@ while (($data = fgetcsv($handle, 500, ";")) !== FALSE)
                 $Ort = $data[6];
 				$KAT = $data[7];
 
-                $sql = "INSERT INTO teilnehmer(StartNr, Name, Vorname, Geburtsdatum, Geschlecht, Team, Ort, KAT)
+                $sql = "INSERT INTO teilnehmer(userID, Name, Vorname, Geburtsdatum, Geschlecht, Team, Ort, KAT)
                 VALUES
-                ('$StartNr',
+                ('$userID',
                  '$Name',
                  '$Vorname',
                  '$Geburtsdatum',

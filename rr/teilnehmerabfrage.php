@@ -53,9 +53,9 @@ function show_all_driver ()
 	// charset einstellen 31.5.2013 CLM  (Muss sonst keine Umlaute)
 	$db->query('SET NAMES utf8');
 	
-	// hole die letzten x Ergebnisse aus der DB anahnd des Laufzeit
+	// hole die letzten x Ergebnisse aus der DB anahnd des runtime
 	$sql = "SELECT * FROM `teilnehmer`\n"
-    . "ORDER BY `teilnehmer`.`StartNr` ASC LIMIT 0, 300 ";
+    . "ORDER BY `teilnehmer`.`userID` ASC LIMIT 0, 300 ";
 	
 	$result = $db->query($sql);
 	if (!$result)
